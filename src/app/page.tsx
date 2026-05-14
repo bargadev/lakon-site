@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import CopyButton from '@/components/CopyButton';
+import { asset } from '@/lib/asset';
 import styles from './page.module.css';
 
 const INSTALL_CMD = 'npm install -g @bargadev/lakon && lakon install';
@@ -29,7 +30,7 @@ export default function HomePage() {
         <div className={styles.headerContent}>
           <a href="#top" className={styles.logoRow}>
             <Image
-              src="/logo.svg"
+              src={asset('/logo.svg')}
               alt="lakon"
               width={28}
               height={28}
@@ -55,7 +56,7 @@ export default function HomePage() {
 
       <section className={styles.hero} id="top">
         <Image
-          src="/logo.svg"
+          src={asset('/logo.svg')}
           alt=""
           width={88}
           height={88}
