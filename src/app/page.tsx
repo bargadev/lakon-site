@@ -20,7 +20,8 @@ const SAVINGS = [
   { cmd: 'ls -la', before: '317', after: '70', delta: '-78%' },
   { cmd: 'grep -rn function src/', before: '287', after: '62', delta: '-78%' },
   { cmd: 'git status', before: '57', after: '18', delta: '-68%' },
-  { cmd: 'Read node_modules/*.js', before: '~5,000', after: 'blocked', delta: '-100%' },
+  { cmd: 'Read pnpm-lock.yaml', before: '~56,000', after: 'blocked', delta: '-100%' },
+  { cmd: 'Grep (head_limit auto)', before: 'unbounded', after: '30 matches', delta: 'capped' },
 ];
 
 export default function HomePage() {
@@ -133,38 +134,66 @@ export default function HomePage() {
       </section>
 
       <section className={styles.section} id="what">
-        <h2 className={styles.sectionTitle}>Three fronts</h2>
+        <h2 className={styles.sectionTitle}>Five fronts</h2>
         <p className={styles.sectionLead}>
-          Other tools stop at one. lakon does all three transparently — your
+          Other tools stop at one. lakon covers all five transparently — your
           agent doesn&apos;t have to remember anything.
         </p>
         <div className={styles.fronts}>
           <div className={styles.frontCard}>
-            <p className={styles.frontLabel}>output side</p>
+            <p className={styles.frontLabel}>output</p>
             <h3 className={styles.frontTitle}>Terse the model</h3>
             <p className={styles.frontBody}>
-              Installs a Spartan-style response rule. No preamble, no restating,
-              no recap. Fragments are fine. Precision is preserved verbatim.
+              Installs a Spartan response rule. No preamble, no restating, no
+              recap. Fragments are fine. Identifiers, paths, and errors stay
+              verbatim.
             </p>
           </div>
           <div className={styles.frontCard}>
-            <p className={styles.frontLabel}>input side</p>
-            <h3 className={styles.frontTitle}>Filter the shell</h3>
+            <p className={styles.frontLabel}>shell</p>
+            <h3 className={styles.frontTitle}>Filter the tools</h3>
             <p className={styles.frontBody}>
-              <code>PreToolUse</code> hook auto-prefixes <code>git</code>/
-              <code>ls</code>/<code>grep</code>/<code>cat</code> with{' '}
-              <code>lakon</code> and compresses the output before it enters
+              <code>PreToolUse</code> on <code>Bash</code> auto-prefixes{' '}
+              <code>git</code>/<code>ls</code>/<code>grep</code>/<code>cat</code>{' '}
+              with <code>lakon</code> and compresses output before it enters
               context.
             </p>
           </div>
           <div className={styles.frontCard}>
-            <p className={styles.frontLabel}>read side</p>
+            <p className={styles.frontLabel}>reads</p>
             <h3 className={styles.frontTitle}>Block junk reads</h3>
             <p className={styles.frontBody}>
-              A second hook on <code>Read</code> denies{' '}
-              <code>node_modules/</code>, lockfiles, build artifacts. Caps files
-              over 800 lines. The agent gets a hint to <code>grep -n</code>{' '}
-              first.
+              <code>PreToolUse</code> on <code>Read</code> denies 30+ junk
+              paths (<code>node_modules/</code>, lockfiles, build artifacts,
+              caches). Caps files &gt;800 lines.
+            </p>
+          </div>
+          <div className={styles.frontCard}>
+            <p className={styles.frontLabel}>search</p>
+            <h3 className={styles.frontTitle}>Cap the Grep</h3>
+            <p className={styles.frontBody}>
+              <code>PreToolUse</code> on <code>Grep</code> auto-sets{' '}
+              <code>head_limit=30</code>. First call hints{' '}
+              <code>output_mode:&quot;count&quot;</code> for tallies; rest cap
+              silently.
+            </p>
+          </div>
+          <div className={styles.frontCard}>
+            <p className={styles.frontLabel}>analysis</p>
+            <h3 className={styles.frontTitle}>Think in code</h3>
+            <p className={styles.frontBody}>
+              For count/filter/parse tasks the rule pushes a one-shot{' '}
+              <code>node -e</code> or <code>awk</code> script. The script reads
+              the data; you read the answer.
+            </p>
+          </div>
+          <div className={styles.frontCard}>
+            <p className={styles.frontLabel}>throttle</p>
+            <h3 className={styles.frontTitle}>Hint once, then silent</h3>
+            <p className={styles.frontBody}>
+              Atomic <code>O_EXCL</code> markers in <code>/tmp</code> mean each
+              guidance line fires once per session. No spam, no token bloat
+              from repeated hints.
             </p>
           </div>
         </div>

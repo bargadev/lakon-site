@@ -41,10 +41,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo.svg', type: 'image/svg+xml' },
+      { url: '/lakon-site/favicon.svg', type: 'image/svg+xml' },
     ],
-    shortcut: '/logo.svg',
-    apple: '/logo.svg',
+    shortcut: '/lakon-site/favicon.svg',
+    apple: '/lakon-site/favicon.svg',
   },
 };
 
