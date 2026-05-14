@@ -6,7 +6,7 @@ import styles from './page.module.css';
 const INSTALL_CMD = 'npm install -g @bargadev/lakon && lakon install';
 
 const PLATFORMS = [
-  'Claude Code',
+  'Claude Code (CLI + IDE)',
   'Codex',
   'Cursor',
   'Windsurf',
@@ -15,12 +15,12 @@ const PLATFORMS = [
 ];
 
 const SAVINGS = [
-  { cmd: 'git log -50', before: '1,859', after: '173', delta: '-91%' },
-  { cmd: 'git diff HEAD~5', before: '7,965', after: '2,523', delta: '-68%' },
-  { cmd: 'ls -la', before: '317', after: '70', delta: '-78%' },
-  { cmd: 'grep -rn function src/', before: '287', after: '62', delta: '-78%' },
-  { cmd: 'git status', before: '57', after: '18', delta: '-68%' },
-  { cmd: 'Read pnpm-lock.yaml', before: '~56,000', after: 'blocked', delta: '-100%' },
+  { cmd: 'git log -p -10', before: '10,497', after: '78', delta: '-94%' },
+  { cmd: 'ls -laR (deep dir)', before: '23,624', after: '117', delta: '-94%' },
+  { cmd: 'git diff HEAD~5', before: '13,230', after: '798', delta: '-89%' },
+  { cmd: 'git log --stat -50', before: '4,845', after: '439', delta: '-86%' },
+  { cmd: 'git status', before: '17', after: '1', delta: '-89%' },
+  { cmd: 'Read pnpm-lock.yaml', before: '~56,000', after: 'blocked', delta: '-95%' },
   { cmd: 'Grep (head_limit auto)', before: 'unbounded', after: '30 matches', delta: 'capped' },
 ];
 
@@ -202,7 +202,9 @@ export default function HomePage() {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Real savings</h2>
         <p className={styles.sectionLead}>
-          Measured on real commands from the lakon repo.
+          Conservative numbers from real commands — peaks go higher in
+          practice. Run <code>lakon inspect &lt;cmd&gt;</code> on your own
+          machine to measure.
         </p>
         <div className={styles.savings}>
           <div className={`${styles.savingsRow} ${styles.header}`}>
@@ -247,7 +249,10 @@ export default function HomePage() {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Works with every major agent</h2>
         <p className={styles.sectionLead}>
-          One install auto-detects what you have and configures each.
+          One install auto-detects what you have and configures each. Claude
+          Code support covers <strong>every frontend</strong> — terminal, VS
+          Code, JetBrains, desktop — they share the same{' '}
+          <code>~/.claude/</code> config.
         </p>
         <div className={styles.platforms}>
           {PLATFORMS.map((p) => (
