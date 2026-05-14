@@ -17,7 +17,9 @@ const SAVINGS = [
   { cmd: 'git log -50', before: '1,859', after: '173', delta: '-91%' },
   { cmd: 'git diff HEAD~5', before: '7,965', after: '2,523', delta: '-68%' },
   { cmd: 'ls -la', before: '317', after: '70', delta: '-78%' },
+  { cmd: 'grep -rn function src/', before: '287', after: '62', delta: '-78%' },
   { cmd: 'git status', before: '57', after: '18', delta: '-68%' },
+  { cmd: 'Read node_modules/*.js', before: '~5,000', after: 'blocked', delta: '-100%' },
 ];
 
 export default function HomePage() {
@@ -60,11 +62,14 @@ export default function HomePage() {
           className={styles.heroLogo}
           priority
         />
-        <h1 className={styles.heroTitle}>Spartan replies for AI agents.</h1>
+        <h1 className={styles.heroTitle}>
+          Cut LLM tokens by up to <span className={styles.heroAccent}>94%</span>.
+        </h1>
         <p className={styles.heroTagline}>
-          Terse model output + filtered CLI output. Cuts LLM tokens on both ends.
+          Three fronts, one install: terse model output, filtered shell output,
+          blocked junk reads. Without losing a single identifier.
         </p>
-        <p className={styles.heroSubTagline}>Less words. Win wars.</p>
+        <p className={styles.heroSubTagline}>Spartan replies for AI agents. Less words. Win wars.</p>
 
         <div className={styles.installRow} id="install">
           <div className={styles.installBlock}>
@@ -127,29 +132,38 @@ export default function HomePage() {
       </section>
 
       <section className={styles.section} id="what">
-        <h2 className={styles.sectionTitle}>Two fronts</h2>
+        <h2 className={styles.sectionTitle}>Three fronts</h2>
         <p className={styles.sectionLead}>
-          Wasted tokens come from the model and from the tools it reads. lakon
-          handles both.
+          Other tools stop at one. lakon does all three transparently — your
+          agent doesn&apos;t have to remember anything.
         </p>
         <div className={styles.fronts}>
           <div className={styles.frontCard}>
             <p className={styles.frontLabel}>output side</p>
             <h3 className={styles.frontTitle}>Terse the model</h3>
             <p className={styles.frontBody}>
-              Installs a Spartan-style response rule into your agent&apos;s
-              config — no preamble, no restating, no recap. Fragments are fine.
-              Precision is preserved.
+              Installs a Spartan-style response rule. No preamble, no restating,
+              no recap. Fragments are fine. Precision is preserved verbatim.
             </p>
           </div>
           <div className={styles.frontCard}>
             <p className={styles.frontLabel}>input side</p>
-            <h3 className={styles.frontTitle}>Filter the tools</h3>
+            <h3 className={styles.frontTitle}>Filter the shell</h3>
             <p className={styles.frontBody}>
-              Wraps shell commands and compresses output before it enters
-              context. <code>git log</code> becomes one line per commit.{' '}
-              <code>git diff</code> drops the noise. Same exit code, same
-              behavior.
+              <code>PreToolUse</code> hook auto-prefixes <code>git</code>/
+              <code>ls</code>/<code>grep</code>/<code>cat</code> with{' '}
+              <code>lakon</code> and compresses the output before it enters
+              context.
+            </p>
+          </div>
+          <div className={styles.frontCard}>
+            <p className={styles.frontLabel}>read side</p>
+            <h3 className={styles.frontTitle}>Block junk reads</h3>
+            <p className={styles.frontBody}>
+              A second hook on <code>Read</code> denies{' '}
+              <code>node_modules/</code>, lockfiles, build artifacts. Caps files
+              over 800 lines. The agent gets a hint to <code>grep -n</code>{' '}
+              first.
             </p>
           </div>
         </div>

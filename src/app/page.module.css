@@ -84,6 +84,15 @@
   margin: 0 0 20px;
 }
 
+.heroAccent {
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, var(--text-primary), var(--accent-dim));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 .heroTagline {
   font-size: clamp(18px, 2.2vw, 22px);
   color: var(--text-secondary);

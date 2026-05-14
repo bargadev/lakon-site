@@ -21,14 +21,14 @@ const softwareJsonLd = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'lakon — Spartan replies for AI agents',
+  title: 'lakon — Cut LLM tokens by up to 94%',
   description:
-    'Cuts LLM tokens on both ends. Terse model output + filtered CLI output. One command installs across Claude Code, Codex, Cursor, Windsurf, Cline, and Gemini.',
+    'Three fronts, one install: terse model output, filtered shell output, blocked junk reads. Cuts LLM tokens by up to 94% without losing a single identifier. Works with Claude Code, Codex, Cursor, Windsurf, Cline, Gemini.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'lakon — Spartan replies for AI agents',
+    title: 'lakon — Cut LLM tokens by up to 94%',
     description:
-      'Less words. Win wars. One command installs across every major AI coding agent.',
+      'Three fronts, one install: terse output, filtered shell, blocked junk reads. Less words. Win wars.',
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
