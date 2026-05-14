@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 
-const SITE_URL = 'https://lakon.fun';
+const SITE_URL = 'https://bargadev.github.io/lakon-site';
 
 const softwareJsonLd = {
   '@context': 'https://schema.org',

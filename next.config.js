@@ -4,6 +4,8 @@ const nextConfig = {
   swcMinify: true,
   output: 'export',
   trailingSlash: true,
+  basePath: '/lakon-site',
+  assetPrefix: '/lakon-site',
   images: { unoptimized: true },
   productionBrowserSourceMaps: false,
   typescript: { ignoreBuildErrors: false },
