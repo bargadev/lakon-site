@@ -56,6 +56,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+html {
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
 }
