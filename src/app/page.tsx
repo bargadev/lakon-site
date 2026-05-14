@@ -249,9 +249,15 @@ export default function HomePage() {
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Works with every major agent</h2>
         <p className={styles.sectionLead}>
-          One install auto-detects what you have and configures each. Claude
-          Code support covers <strong>every frontend</strong> — terminal, VS
-          Code, JetBrains, desktop — they share the same{' '}
+          One install auto-detects what you have and configures the{' '}
+          <strong>global</strong> agents (Claude Code, Codex, Gemini) in{' '}
+          <code>~/</code> — never touches your current directory. For
+          per-project rules (Cursor, Windsurf, Cline), add{' '}
+          <code>--here</code> from inside the repo.
+        </p>
+        <p className={styles.sectionLead}>
+          Claude Code support covers <strong>every frontend</strong> —
+          terminal, VS Code, JetBrains, desktop — they share the same{' '}
           <code>~/.claude/</code> config.
         </p>
         <div className={styles.platforms}>
