@@ -1,0 +1,149 @@
+.hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 32px 32px;
+  text-align: left;
+}
+
+.title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+
+.lead {
+  font-size: 17px;
+  color: var(--text-secondary);
+  margin: 0 0 24px;
+}
+
+.heroLinks {
+  display: flex;
+  gap: 24px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.heroLinks a {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.heroLinks a:hover {
+  color: var(--text-primary);
+}
+
+.timeline {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 32px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.entry {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px 28px 24px;
+  background: var(--bg-secondary);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.entry:hover {
+  border-color: var(--text-muted);
+}
+
+.entryHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.version {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.latestBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.highlights {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.highlights li {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.highlights code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  background: var(--bg-tertiary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.installLine {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.installLine code {
+  color: var(--text-secondary);
+}
+
+.footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 32px 80px;
+}
+
+.backLink {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--text-primary);
+}

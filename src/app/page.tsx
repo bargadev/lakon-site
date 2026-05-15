@@ -1,9 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import CopyButton from '@/components/CopyButton';
 import { asset } from '@/lib/asset';
+import { LAKON_VERSION } from '@/lib/version';
+import { RELEASES } from '@/lib/releases';
 import styles from './page.module.css';
 
 const INSTALL_CMD = 'npm install -g @bargadev/lakon && lakon install';
+const LATEST_RELEASE = RELEASES[0];
 
 const PLATFORMS = [
   'Claude Code (CLI + IDE)',
@@ -39,11 +43,15 @@ export default function HomePage() {
               priority
             />
             <span className={styles.logoName}>lakon</span>
+            <Link href="/releases" className={styles.versionPill} aria-label={`current version ${LAKON_VERSION}, view releases`}>
+              v{LAKON_VERSION}
+            </Link>
           </a>
           <nav className={styles.headerNav}>
             <a href="#story">story</a>
             <a href="#what">what it does</a>
             <a href="#install">install</a>
+            <Link href="/releases">releases</Link>
             <a
               href="https://github.com/bargadev/lakon-lib"
               target="_blank"
@@ -74,6 +82,12 @@ export default function HomePage() {
         <p className={styles.heroSubTagline}>Spartan replies for AI agents. Less words. Win wars.</p>
 
         <div className={styles.installRow} id="install">
+          <div className={styles.latestLine}>
+            <span className={styles.latestLabel}>latest</span>
+            <span className={styles.latestVersion}>v{LATEST_RELEASE.version}</span>
+            <span className={styles.latestDate}>· {LATEST_RELEASE.date}</span>
+            <Link href="/releases" className={styles.latestLink}>release notes →</Link>
+          </div>
           <div className={styles.installBlock}>
             <span className={styles.prompt}>$</span>
             <span className={styles.installCmd}>{INSTALL_CMD}</span>
