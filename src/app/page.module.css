@@ -47,19 +47,20 @@
 .versionPill {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--text-muted);
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
-  padding: 2px 8px;
-  letter-spacing: 0.02em;
-  transition: color var(--transition-fast), border-color var(--transition-fast);
+  padding: 3px 10px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
   text-decoration: none;
 }
 
 .versionPill:hover {
-  color: var(--text-primary);
-  border-color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.32);
 }
 
 .headerNav {
