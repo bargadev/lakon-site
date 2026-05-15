@@ -148,10 +148,11 @@ export default function HomePage() {
       </section>
 
       <section className={styles.section} id="what">
-        <h2 className={styles.sectionTitle}>Five fronts</h2>
+        <h2 className={styles.sectionTitle}>What lakon does</h2>
         <p className={styles.sectionLead}>
-          Other tools stop at one. lakon covers all five transparently — your
-          agent doesn&apos;t have to remember anything.
+          Other tools stop at one front. lakon covers each side of the
+          token leak transparently — your agent doesn&apos;t have to
+          remember anything.
         </p>
         <div className={styles.fronts}>
           <div className={styles.frontCard}>
@@ -208,6 +209,25 @@ export default function HomePage() {
               Atomic <code>O_EXCL</code> markers in <code>/tmp</code> mean each
               guidance line fires once per session. No spam, no token bloat
               from repeated hints.
+            </p>
+          </div>
+          <div className={styles.frontCard}>
+            <p className={styles.frontLabel}>session</p>
+            <h3 className={styles.frontTitle}>Track LLM output</h3>
+            <p className={styles.frontBody}>
+              A <code>Stop</code> hook records{' '}
+              <code>input_tokens</code> / <code>output_tokens</code> /
+              cache hits per turn. <code>lakon gain</code> shows model-side
+              usage alongside shell savings.
+            </p>
+          </div>
+          <div className={styles.frontCard}>
+            <p className={styles.frontLabel}>updates</p>
+            <h3 className={styles.frontTitle}>Daily version check</h3>
+            <p className={styles.frontBody}>
+              A <code>SessionStart</code> hook checks npm at most 1×/day
+              and surfaces a new-version notice inside the session.
+              Opt-out: <code>LAKON_NO_UPDATE_CHECK=1</code>.
             </p>
           </div>
         </div>

@@ -6,6 +6,13 @@ export type ReleaseEntry = {
 
 export const RELEASES: ReleaseEntry[] = [
   {
+    version: '0.6.1',
+    date: '2026-05-15',
+    highlights: [
+      'Docs-only patch: README brought in line with 0.5.0/0.6.0 features (Stop hook, SessionStart hook, `lakon version`, `CLAUDE_CONFIG_DIR`, new env vars, updated `lakon gain` output, coverage gate).',
+    ],
+  },
+  {
     version: '0.6.0',
     date: '2026-05-14',
     highlights: [
